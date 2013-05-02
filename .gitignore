@@ -1,0 +1,10 @@
+*.gem
+.rvmrc
+.bundle
+.rspec
+/Gemfile.lock
+pkg/*
+.powenv
+tmp
+bin
+.DS_store
