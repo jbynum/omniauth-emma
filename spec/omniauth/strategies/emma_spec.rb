@@ -3,15 +3,15 @@ require 'omniauth-emma'
 require 'openssl'
 require 'base64'
 
-describe OmniAuth::Strategies::TaskRabbit do
+describe OmniAuth::Strategies::Emma do
   before :each do
     @request = double('Request')
     @request.stub(:params) { {} }
     @request.stub(:cookies) { {} }
     @request.stub(:env) { {} }
 
-    @client_id = '123'
-    @client_secret = '53cr3tz'
+    @client_id = '321'
+    @client_secret = 's3cr3tes'
   end
 
   subject do

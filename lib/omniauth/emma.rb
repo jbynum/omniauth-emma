@@ -1,2 +1,2 @@
-require 'omniauth/taskrabbit/version'
-require 'omniauth/strategies/emma'
+require "omniauth/emma/version"
+require "omniauth/strategies/emma"

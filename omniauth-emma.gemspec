@@ -1,26 +1,26 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'omniauth/emma/version'
 
-Gem::Specification.new do |s|
-  s.name     = 'omniauth-emma'
-  s.version  = OmniAuth::Emma::VERSION
-  s.authors  = ['Jason Bynum']
-  s.email    = ['jason.bynum@gmail.com']
-  s.homepage = 'https://github.com/jbynum/omniauth-emma'
-  s.summary     = %q{OmniAuth strategy for Emma}
-  s.description = %q{OmniAuth strategy for Emma}
-  s.license     = "MIT"
+Gem::Specification.new do |spec|
+  spec.name          = "omniauth-emma"
+  spec.version       = Omniauth::Emma::VERSION
+  spec.authors       = ["Jason Bynum"]
+  spec.email         = ["jason.bynum@gmail.com"]
+  spec.description   = %q{Omniauth strategy for Emma}
+  spec.summary       = %q{Omniauth strategy for Emma}
+  spec.homepage      = "https://github.com/jbynum/omniauth-emma"
+  spec.license       = "MIT"
 
-  s.rubyforge_project = "omniauth-twitter"
+  spec.files         = `git ls-files`.split($/)
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency 'rspec', '~> 2.13.0'
 
-  s.add_runtime_dependency 'omniauth-oauth2', '~> 1.1.1'
-
-  s.add_development_dependency 'rspec', '~> 2'
-  s.add_development_dependency 'rake'
+  spec.add_runtime_dependency 'omniauth-oauth2', '~> 1.1.1'
 end
