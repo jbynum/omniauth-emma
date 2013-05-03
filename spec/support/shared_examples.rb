@@ -8,6 +8,7 @@ shared_examples 'an oauth2 strategy' do
   end
 
   describe '#authorize_params' do
+    # TODO -- Get these tests passing
     it 'should include any authorize params passed in the :authorize_params option' do
       @options = { :authorize_params => { :foo => 'bar', :baz => 'zip' } }
       subject.authorize_params['foo'].should eq('bar')

@@ -6,30 +6,12 @@ module OmniAuth
       option :name, "emma"
 
       option :client_options, {
-              :site => "https://api.e2ma.net",
-              :authorize_url => '/oauth/authorize',
-              :request_token_url  => "/oauth/request_token",
-              :token_url          => '/oauth/token'
-            }
+        :site               => "https://api.e2ma.net",
+        :authorize_url      => '/oauth/authorize',
+        :request_token_url  => "/oauth/token"
+      }
 
-      uid{ raw_info['id'] }
-
-      info do
-        {
-          :name => raw_info['name'],
-          :email => raw_info['email']
-        }
-      end
-
-      extra do
-        {
-          'raw_info' => raw_info
-        }
-      end
-
-      def raw_info
-        @raw_info ||= access_token.get('/me').parsed
-      end
+      uid { access_token.params['account_id'] }
 
     end
   end
