@@ -18,3 +18,6 @@ tmp
 .rvmrc
 .rspec
 .DS_store
+.idea
+.idea/*
+*.iml

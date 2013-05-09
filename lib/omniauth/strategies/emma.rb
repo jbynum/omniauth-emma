@@ -11,7 +11,7 @@ module OmniAuth
         :request_token_url  => "/oauth/token"
       }
 
-      uid { access_token.params['account_id'] }
+      uid { access_token.params['emma_id'] }
 
     end
   end
