@@ -11,14 +11,14 @@ shared_examples 'an oauth2 strategy' do
     # TODO -- Get these tests passing
     it 'should include any authorize params passed in the :authorize_params option' do
       @options = { :authorize_params => { :foo => 'bar', :baz => 'zip' } }
-      subject.authorize_params['foo'].should eq('bar')
-      subject.authorize_params['baz'].should eq('zip')
+      subject.options.authorize_params['foo'].should eq('bar')
+      subject.options.authorize_params['baz'].should eq('zip')
     end
 
     it 'should include top-level options that are marked as :authorize_options' do
-      @options = { :authorize_options => [:scope, :foo], :scope => 'bar', :foo => 'baz' }
-      subject.authorize_params['scope'].should eq('bar')
-      subject.authorize_params['foo'].should eq('baz')
+      @options = { :authorize_options => {:scope => 'bar', :foo => 'baz'} }
+      subject.options.authorize_options['scope'].should eq('bar')
+      subject.options.authorize_options['foo'].should eq('baz')
     end
   end
 

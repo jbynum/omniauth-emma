@@ -25,7 +25,7 @@ describe OmniAuth::Strategies::Emma do
 
   describe '#client' do
     it 'has correct Emma site' do
-      subject.client.site.should eq('https://api.e2ma.net')
+      subject.client.site.should eq('https://login.e2ma.net')
     end
 
     it 'has correct authorize url' do

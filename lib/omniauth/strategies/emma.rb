@@ -6,7 +6,7 @@ module OmniAuth
       option :name, "emma"
 
       option :client_options, {
-        :site               => "https://api.e2ma.net",
+        :site               => "https://login.e2ma.net",
         :authorize_url      => '/oauth/authorize',
         :request_token_url  => "/oauth/token"
       }
