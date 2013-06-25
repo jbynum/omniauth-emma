@@ -18,7 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the following to your `config/initializers/omniauth.rb`:
+
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :emma, "client_id", "client_secret"
+    end
+
+You need to insert your key and secret, which you get when you register your app with Emma.
+
+Now just follow the README at: https://github.com/intridea/omniauth
 
 ## Contributing
 
